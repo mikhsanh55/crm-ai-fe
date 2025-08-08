@@ -1,6 +1,10 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import LandingPageLayout from "./layouts/LandingPageLayout"
+import LandingPageLayout from "./layouts/landing-page/Layout"
+import BlankLayout from "./layouts/blank-page/Layout"
 import Home from "./pages/Home"
+import LoginPage from "./pages/auth/Login"
+import RegisterPage from "./pages/auth/Register"
+import NotFoundPage from "./pages/NotFoundPage"
 
 function App() {
     return (
@@ -10,6 +14,17 @@ function App() {
                 <Route path="/" element={<LandingPageLayout />}>
                     <Route index element={<Home />} />
                 </Route>
+
+                {/* Blank Page */}
+                <Route path="/" element={<BlankLayout />}>
+                    {/* Blank Layout (used for login, register, 404 pages) */}
+                    {/* Here we use the children prop to directly pass in the page components */}
+                    <Route path="login" element={<LoginPage />} />
+                    <Route path="register" element={<RegisterPage />} />
+                    {/* 404 Catch-all */}
+                    <Route path="*" element={<NotFoundPage />} />
+                </Route>
+
             </Routes>
         </Router>
     );
