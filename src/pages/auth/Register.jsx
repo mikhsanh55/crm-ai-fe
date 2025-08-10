@@ -35,7 +35,7 @@ function RegisterPage() {
   };
 
   return (
-    <div className="min-h-screen bg-transparent flex items-center justify-center p-4">
+    <div className="min-h-screen bg-transparent flex items-center justify-center my-8 p-4">
       <div className="bg-gray-100 p-8 rounded-lg shadow-lg w-full max-w-lg">
         <h2 className="text-2xl font-bold text-center text-blue-600 mb-6">Register</h2>
         <form onSubmit={handleSubmit}>
